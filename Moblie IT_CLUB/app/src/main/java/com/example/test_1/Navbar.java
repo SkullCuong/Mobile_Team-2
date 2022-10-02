@@ -13,5 +13,5 @@ public class Navbar extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(R.layout.activity_navbar);
 
-
+    }
 }
