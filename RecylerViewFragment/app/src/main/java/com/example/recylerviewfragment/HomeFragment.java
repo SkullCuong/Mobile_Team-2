@@ -33,6 +33,7 @@ public class HomeFragment extends Fragment {
     private String[] newsMessage;
     private int[] imageResourceID;
     private RecyclerView recyclerView;
+    private String[] newsname;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -89,9 +90,9 @@ public class HomeFragment extends Fragment {
         newList = new ArrayList<>();
          newsMessage = new String[]{
                 getString(R.string.head_1),
-                getString(R.string.head_1),
-                getString(R.string.head_1),
-                getString(R.string.head_1),
+                getString(R.string.head_2),
+                getString(R.string.head_3),
+                getString(R.string.head_4),
         };
          imageResourceID = new int[]{
                  R.drawable.n1,
@@ -99,8 +100,14 @@ public class HomeFragment extends Fragment {
                  R.drawable.download,
                  R.drawable.images,
          };
+        newsname = new String[]{
+                getString(R.string.n_1),
+                getString(R.string.n_2),
+                getString(R.string.n_3),
+                getString(R.string.n_4),
+        };
          for (int i = 0; i < newsMessage.length;i++){
-             news news = new news(newsMessage[i],imageResourceID[i]);
+             news news = new news(newsMessage[i],imageResourceID[i],newsname[i]);
              newList.add(news);
         }
     }

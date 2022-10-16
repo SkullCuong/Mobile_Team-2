@@ -6,9 +6,11 @@ public class news {
 
     String message;
     int img;
+    String name;
 
-    public news(String message, int img) {
+    public news(String message, int img,String name ) {
         this.message = message;
         this.img = img;
+        this.name =name;
     }
 }

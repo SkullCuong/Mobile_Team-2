@@ -37,6 +37,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         news news = newsArrayList.get(position);
         holder.text.setText(news.message);
         holder.img.setImageResource(news.img);
+        holder.name.setText(news.name);
     }
 
     @Override
@@ -47,10 +48,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public static class MyViewHolder extends RecyclerView.ViewHolder{
         CircleImageView img;
         TextView  text;
+        TextView name;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             img = itemView.findViewById(R.id.profile);
             text = itemView.findViewById(R.id.message);
+            name = itemView.findViewById(R.id.name);
         }
     }
 }
