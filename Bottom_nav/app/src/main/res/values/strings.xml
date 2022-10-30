@@ -1,5 +1,12 @@
 <resources>
-    <string name="app_name">Bottom_nav</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="head_1">Hello U </string>
+    <string name="head_2">I Love U </string>
+    <string name="head_3">I am in love with yah</string>
+    <string name="head_4">I hate u</string>
+    <string name="n_1">Phu Cuong </string>
+    <string name="n_2">Hoang Khang </string>
+    <string name="n_3">Duc Loi</string>
+    <string name="n_4">Lam Phi</string>
+
 </resources>

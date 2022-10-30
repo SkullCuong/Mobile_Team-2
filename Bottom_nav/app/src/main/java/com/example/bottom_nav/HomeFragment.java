@@ -1,12 +1,17 @@
 package com.example.bottom_nav;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +28,11 @@ public class HomeFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private ArrayList<news> newList;
+    private String[] newsMessage;
+    private int[] imageResourceID;
+    private RecyclerView recyclerView;
+    private String[] newsname;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -60,5 +70,44 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false);
+
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        dataInit();;
+        recyclerView = view.findViewById(R.id.Recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setHasFixedSize(true);
+        MyAdapter myAdapter = new MyAdapter(getContext(),newList);
+        recyclerView.setAdapter(myAdapter);
+        myAdapter.notifyDataSetChanged();
+    }
+
+    private void dataInit() {
+        newList = new ArrayList<>();
+        newsMessage = new String[]{
+                getString(R.string.head_1),
+                getString(R.string.head_2),
+                getString(R.string.head_3),
+                getString(R.string.head_4),
+        };
+        imageResourceID = new int[]{
+                R.drawable.n1,
+                R.drawable.nn,
+                R.drawable.download,
+                R.drawable.images,
+        };
+        newsname = new String[]{
+                getString(R.string.n_1),
+                getString(R.string.n_2),
+                getString(R.string.n_3),
+                getString(R.string.n_4),
+        };
+        for (int i = 0; i < newsMessage.length;i++){
+            news news = new news(newsMessage[i],imageResourceID[i],newsname[i]);
+            newList.add(news);
+        }
     }
 }

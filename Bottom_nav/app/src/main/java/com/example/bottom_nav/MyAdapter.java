@@ -1,4 +1,4 @@
-package com.example.recylerviewfragment;
+package com.example.bottom_nav;
 
 import android.content.Context;
 import android.view.LayoutInflater;
